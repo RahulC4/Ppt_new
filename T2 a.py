@@ -57,7 +57,7 @@ with col1:
                         st.session_state["preview_loaded"] = True
                         st.success(f"Loaded {len(st.session_state['slides_catalog'])} slides from {len(ppt_names)} PPT(s).")
                         # navigate to selection
-                        st.experimental_rerun()
+                        st.rerun()
 
 with col2:
     st.write("Quick actions")
