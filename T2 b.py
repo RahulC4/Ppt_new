@@ -14,7 +14,7 @@ else:
     for i, s in enumerate(slides):
         col = cols[i % 3]
         with col:
-            st.image(s.get("png_path"), use_column_width=True)
+            st.image(s.get("png_path"), use_container_width=True)
             caption = f"{s.get('ppt_blob')} — slide {s.get('slide_index')}"
             st.caption(caption)
             key = f"sel_{s.get('slide_id')}"
