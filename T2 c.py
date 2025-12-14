@@ -1,4 +1,5 @@
 # pages/3_❓_QnA.py
+import os
 import streamlit as st
 import json
 from utils import text_client, get_env, safe_json_load, logger
@@ -72,7 +73,7 @@ for s in selected_structs:
 # show each slide with questions
 for s in selected_structs:
     st.markdown(f"### Reference: {s.get('slide_id')} — {s.get('ppt_path').split(os.sep)[-1]} (slide {s.get('slide_index')})")
-    st.image(s.get("png_path"), use_column_width=True)
+    st.image(s.get("png_path"), use_container_width=True)
     qmap = st.session_state.get(f"questions_{s['slide_id']}", {})
     st.session_state.setdefault("answers_by_slide", {})
     st.session_state["answers_by_slide"].setdefault(s["slide_id"], {})
