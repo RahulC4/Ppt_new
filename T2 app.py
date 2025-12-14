@@ -1,3 +1,4 @@
+
 # app.py
 import streamlit as st
 
@@ -7,7 +8,7 @@ st.title("AI PPT Generator")
 st.write("This app uses a multi-page flow. Use the sidebar to navigate or click below to start.")
 if st.button("Go to Home (Start)"):
     try:
-        st.experimental_set_query_params(page="1_Home")
+        st.query_params(page="1_Home")
         st.switch_page("pages/1_Home.py")
     except Exception:
         # fallback: Streamlit versions differ; link to the Home page in sidebar
